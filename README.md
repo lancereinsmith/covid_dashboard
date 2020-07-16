@@ -8,4 +8,7 @@ heroku create
 
 git push heroku master
 
+heroku open
+
 heroku ps:scale web=1
+
