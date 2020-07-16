@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run sacovid.py
+web: sh setup.sh && streamlit run covid_dashboard.py
