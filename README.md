@@ -8,7 +8,7 @@ heroku login
 
 heroku create
 
-heroku config:set LOGIN_EMAIL=email@address.com
+heroku config:set STREAMLIT_EMAIL=email@address.com
 
 git add .
 git commit -m "Initial commit"
