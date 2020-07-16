@@ -2,13 +2,19 @@
 
 https://gilberttanner.com/blog/deploying-your-streamlit-dashboard-with-heroku
 
-heroku login
+```
+$ git clone https://github.com/lancereinsmith/covid_dashboard.git
 
-heroku create
+$ cd covid_dashboard
+```
+```
+$ heroku login
 
-git push heroku master
+$ heroku create
 
-heroku open
+$ git push heroku master
+
+$ heroku open
+```
 
 heroku ps:scale web=1
-
