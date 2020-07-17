@@ -1,4 +1,4 @@
-# Make a COVID-19 Dashboard in Less Than 40 Lines of Code
+# Make a COVID-19 Dashboard in Fewer Than 40 Lines of Code
 
 #### Intro
 
@@ -186,7 +186,7 @@ A browser window should open to your new, fancy dashboard!  Try changing the dat
 
 ![Dashboard](dashboard.png)
 
-This is just a starting point.  There is a whole lot you can do to make it more interactive.
+This is just a starting point.  There is a lot you can do to make it more interactive.
 
 The source code is also available at [https://github.com/lancereinsmith/covid_dashboard](https://github.com/lancereinsmith/covid_dashboard).
 
