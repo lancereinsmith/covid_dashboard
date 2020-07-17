@@ -13,9 +13,9 @@ def fetch_data():
 
 df = fetch_data()
 
-options = {"Cumulative Positive Reslts": 'positive',
+options = {"Cumulative Positive Results": 'positive',
     "Daily Positive Tests": 'positiveIncrease',
-    "Cumluative Deaths": 'death',
+    "Cumulative Deaths": 'death',
     "Daily Deaths": 'deathIncrease',
     "Current Hospitalizations": 'hospitalizedCurrently',
     "Daily Hospitalizations": 'hospitalizedIncrease',

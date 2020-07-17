@@ -59,9 +59,9 @@ Again, the `fetch_data()` only triggers an API call once; from then on, the data
 Next, we construct a dictionary of data descriptors and their corresponding columns in the DataFrame we just constructed from the API.
 
 ```python
-options = {"Cumulative Positive Reslts": 'positive',
+options = {"Cumulative Positive Results": 'positive',
     "Daily Positive Tests": 'positiveIncrease',
-    "Cumluative Deaths": 'death',
+    "Cumulative Deaths": 'death',
     "Daily Deaths": 'deathIncrease',
     "Current Hospitalizations": 'hospitalizedCurrently',
     "Daily Hospitalizations": 'hospitalizedIncrease',
@@ -141,9 +141,9 @@ def fetch_data():
 
 df = fetch_data()
 
-options = {"Cumulative Positive Reslts": 'positive',
+options = {"Cumulative Positive Results": 'positive',
     "Daily Positive Tests": 'positiveIncrease',
-    "Cumluative Deaths": 'death',
+    "Cumulative Deaths": 'death',
     "Daily Deaths": 'deathIncrease',
     "Current Hospitalizations": 'hospitalizedCurrently',
     "Daily Hospitalizations": 'hospitalizedIncrease',
@@ -186,7 +186,7 @@ A browser window should open to your new, fancy dashboard!  Try changing the dat
 
 ![Dashboard](dashboard.png)
 
-This is just a starting point.  There is a lot you can do to make it more interactive.
+This is just a starting point.  There is a lot you can do to make it more interactive and show data in different ways.
 
 The source code is also available at [https://github.com/lancereinsmith/covid_dashboard](https://github.com/lancereinsmith/covid_dashboard).
 
