@@ -6,7 +6,7 @@ One of the difficult parts of making sense of the SARS-CoV-2 pandemic is sorting
 
 This project uses [Streamlit](https://www.streamlit.io/), which is an exciting and relatively nascent project as of this writing.  It makes building beautiful apps  for displaying data visualizations as easy as writing a single Python script.  If you like what you see here, I suggest you read through their [documentation](https://docs.streamlit.io/en/stable/) and follow this project as it grows.
 
-As stated above, there are many data sources for COVID-19.  We will be using [covidtracking.com](https://covidtracking.com/) as it has a simple [REST API](https://covidtracking.com/data/api).  However, I have seen [other sources](https://covid19api.com/), and I also recommend checking with your local municipality for pubic data sources.
+As stated above, there are many data sources for COVID-19.  We will be using [covidtracking.com](https://covidtracking.com/) as it has a simple [REST API](https://covidtracking.com/data/api).  However, I have seen [other sources](https://data.world/resources/coronavirus/), and I also recommend checking with your local municipality for pubic data sources.  Remember to be respectful and follow API guidelines.
 
 Install Streamlit using pip:
 
@@ -233,3 +233,13 @@ If there is a problem, make sure your dyno is scaled:
 heroku ps:scale web=1
 ```
 
+You now have a hosted dashboard!  Check out the example: [https://examplecoviddashboard.herokuapp.com/](https://examplecoviddashboard.herokuapp.com/). (Because free-tier dynos go to sleep when not used, it may take a while for a site to launch.)
+
+But, you don't have to stop there.  Here are some other ideas:
+
+* Source data from different [states](https://covidtracking.com/api/v1/states/daily.json) and chart comparisons between them.
+* Try calculating functions on your data, such as moving averages ([hint](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html)), to make the plots more interesting.
+* Try different chart types using [matplotlib](https://matplotlib.org/gallery.html) and [seaborn](https://seaborn.pydata.org/examples/index.html).
+* Allow different user input to customize the views.
+
+Stay safe and have fun!
