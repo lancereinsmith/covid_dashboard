@@ -1,20 +1,24 @@
 # Build a COVID-19 Dashboard with Fewer Than 40 Lines of Code
 
+Lance Reinsmith, M.D. is a radiologist and programming hobbyist who lives and works in San Antonio, TX.  Dr. Reinsmith has seen many radiologic exams performed on COVID-19 patients at varying stages of the disease.
+
 #### Intro
 
-One of the difficult parts of making sense of the SARS-CoV-2 pandemic is sorting through all the myriad data coming at us from every direction.  In this tutorial, I will show you a fun way of manipulating some of these virus data to build your own dashboard to view United States COVID-19 statistics.  Afterward, you'll hopefully be able to enhance yours to make unique visualizations.
+One of the difficult parts of making sense of the COVID pandemic (caused by the SARS-CoV-2 virus) is sorting through all the myriad data coming at us from every direction.  In this tutorial, I will show you a fun way of manipulating some of these data to build your own dashboard to view United States COVID-19 statistics.  Afterward, you will hopefully be able to enhance your dashboard(s) to make unique visualizations.
 
-This project uses [Streamlit](https://www.streamlit.io/), which is an exciting and relatively nascent project as of this writing.  It makes building beautiful apps  for displaying data visualizations as easy as writing a single Python script.  If you like what you see here, I suggest you read through their [documentation](https://docs.streamlit.io/en/stable/) and follow this project as it grows.
+This project uses [Streamlit](https://www.streamlit.io/), an exciting and relatively nascent open-source data visualization project.  It makes building beautiful data visualizations as easy as writing a Python script.  If you like what you see here, I suggest you read through their [documentation](https://docs.streamlit.io/en/stable/) and follow this project as it grows.
 
-As stated above, there are many data sources for COVID-19.  We will be using [covidtracking.com](https://covidtracking.com/) as it has a simple [REST API](https://covidtracking.com/data/api).  However, I have seen [other sources](https://data.world/resources/coronavirus/), and I also recommend checking with your local municipality for pubic data sources.  Remember to be respectful and follow API guidelines.
+As stated above, there are many data sources for COVID-19.  We will be using [covidtracking.com](https://covidtracking.com/) as it has a simple [REST API](https://covidtracking.com/data/api).  However, there are many [other sources](https://data.world/resources/coronavirus/) available. I also recommend checking with your local municipality for public data sources.  Remember to be respectful and follow API guidelines.
 
-Install Streamlit using pip:
+Below is a screen shot of what the finished dashboard will look like, and [here is a link](https://examplecoviddashboard.herokuapp.com/) to a live demo.
+
+#### Let's get started!
+
+The easiest way to install Streamlit is via pip:
 
 ```
 pip install streamlit
 ```
-
-#### Let's get to it!
 
 Open a new script (I called mine `covid_dashboard.py`), and begin by importing some modules:
 
@@ -38,9 +42,11 @@ def fetch_data():
     return df
 ```
 
-Fortunately, the API output is in JSON format which we can directly read into a pandas DataFrame.  We now convert the 'date' column to datetime objects and reindex the DataFrame with these.  Finally, we sort the DataFrame by these dates.
+The API output is in JSON format which we can read directly into a pandas DataFrame.  We now convert the 'date' column to datetime objects and reindex the DataFrame with these.  Finally, we sort the DataFrame by these dates.
 
-As the user interacts with our dashboard, the script is frequently re-run.  However, we don't want to poll the API every time the user changes how he/she wants to view the same data.  Streamlit simplifies this by having a `@st.cache` decorator that we can place ahead of any API call.  This way, the API is only called once despite running the `fetch_data()` function multiple times.  Our decorated function and function call should look like this:
+As the user interacts with our dashboard, the script is frequently re-run.  However, we don't want to poll the API every time the user changes how he/she wants to view the same data.  Streamlit simplifies this by having a `@st.cache` decorator that we can place ahead of any API call.  This way, the API is only called once despite running the `fetch_data()` function multiple times.  (This is important not to overrun the API endpoint with unnecessary calls for the exact same data over and over again.)
+
+Our decorated function and function call should look like this:
 
 ```python
 @st.cache
@@ -102,7 +108,7 @@ charts = st.sidebar.multiselect("Select individual charts to display:",
                 default=list(options.keys())[:1])
 ```
 
-The first parameter is the caption, the options are the keys of our `options` dictionary defined above, and the default is the first of those options.  This returns a list of the chosen options.
+The first parameter is the caption, the options are the keys of our `options` dictionary defined above, and the default is the first of those options.  This returns a list of the chosen options which we store in `charts`.
 
 In our main window, we now loop through the `charts` list and plot each one on a single axis.
 
@@ -113,9 +119,9 @@ for chart in charts:
     plt.legend(loc="upper left")
 ```
 
-The first line in the loop selects the column in the DataFrame corresponding to the chosen option, filters out the dates chosen, and uses the pandas plot function to plot the data from that column.  The other lines are for formatting the axis.
+The first line in the loop selects the column in the DataFrame corresponding to the chosen option, filters out the dates chosen, and uses the pandas plot function to plot the data from that column.  The other lines are for formatting the axis; you can customize these to change the look of your charts.
 
-Once all the plots are created, the pyplot object still resides in memory, we have to tell Streamlit to show it by calling:
+Once all the plots are created, the `pyplot` object still resides in memory, we have to tell Streamlit to show it by calling:
 
 ```python
 st.pyplot()
@@ -192,7 +198,7 @@ The source code is also available at [https://github.com/lancereinsmith/covid_da
 
 #### Deploying your dashboard
 
-If you would like others to be able to see your dashboard, why not deploy it to Heroku on a free tier?  The following is based on an [article by Gilbert Tanner](https://gilberttanner.com/blog/deploying-your-streamlit-dashboard-with-heroku).  You will need git, a [Heroku](https://www.heroku.com) account and the Heroku CLI for this.
+If you would like others to be able to see your dashboard, deploy it to Heroku on a free tier!  The following is based on an [article by Gilbert Tanner](https://gilberttanner.com/blog/deploying-your-streamlit-dashboard-with-heroku).  You will need [git](https://git-scm.com/), a [Heroku](https://www.heroku.com) account and the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) for this.
 
 Clone my repository from GitHub.  
 
@@ -201,7 +207,7 @@ $ git clone https://github.com/lancereinsmith/covid_dashboard.git
 
 $ cd covid_dashboard
 ```
-Replace the `covid_dashboard.py` script with yours.  (You must rename your file to 'covid_dashboard.py')  
+Replace the `covid_dashboard.py` script with yours.  (You must rename your file to 'covid_dashboard.py' or edit the `Procfile` with the name of your script.)  
 
 Next, login to Heroku with your credentials if you have not already done so.
 
