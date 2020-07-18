@@ -1,4 +1,4 @@
-# Build a COVID-19 Dashboard with Fewer Than 40 Lines of Code
+# Build a COVID-19 Dashboard With Fewer Than 40 Lines of Code
 
 Lance Reinsmith, M.D. is a radiologist and programming hobbyist who lives and works in San Antonio, TX.  Dr. Reinsmith has seen and interpreted many radiologic exams performed on COVID-19 patients at varying stages of the disease.
 
