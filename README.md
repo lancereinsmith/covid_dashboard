@@ -1,4 +1,4 @@
-# Make a COVID-19 Dashboard in Fewer Than 40 Lines of Code
+# Build a COVID-19 Dashboard with Fewer Than 40 Lines of Code
 
 #### Intro
 
