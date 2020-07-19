@@ -20,7 +20,7 @@ The easiest way to install Streamlit is via pip:
 pip install streamlit
 ```
 
-Open a new script (I called mine `covid_dashboard.py`), and begin by importing some modules:
+Open a new Python script (I called mine `covid_dashboard.py`), and begin by importing some libraries:
 
 ```python
 import streamlit as st
