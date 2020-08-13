@@ -14,7 +14,7 @@ Below is a screen shot of what the finished dashboard will look like, and [here 
 
 #### Let's get started!
 
-The easiest way to install Streamlit is via pip:
+The recommended way to install Streamlit is via pip:
 
 ```
 pip install streamlit
