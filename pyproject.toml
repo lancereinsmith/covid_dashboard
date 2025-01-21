@@ -1,0 +1,10 @@
+[project]
+name = "covid-dashboard"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [ "requests", "matplotlib", "streamlit", "pandas",]
+
+[tool.uv]
+dev-dependencies = []
