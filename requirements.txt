@@ -8,7 +8,7 @@ attrs==25.4.0
     #   referencing
 blinker==1.9.0
     # via streamlit
-cachetools==6.2.4
+cachetools==7.0.0
     # via streamlit
 certifi==2026.1.4
     # via requests
@@ -42,21 +42,21 @@ markupsafe==3.0.3
     # via jinja2
 matplotlib==3.10.8
     # via -r requirements.in
-narwhals==2.15.0
+narwhals==2.16.0
     # via altair
-numpy==2.4.1
+numpy==2.4.2
     # via
     #   contourpy
     #   matplotlib
     #   pandas
     #   pydeck
     #   streamlit
-packaging==25.0
+packaging==26.0
     # via
     #   altair
     #   matplotlib
     #   streamlit
-pandas==2.3.3
+pandas==3.0.0
     # via
     #   -r requirements.in
     #   streamlit
@@ -64,13 +64,13 @@ pillow==12.1.0
     # via
     #   matplotlib
     #   streamlit
-protobuf==6.33.4
+protobuf==6.33.5
     # via streamlit
-pyarrow==22.0.0
+pyarrow==23.0.0
     # via streamlit
 pydeck==0.9.1
     # via streamlit
-pyparsing==3.3.1
+pyparsing==3.3.2
     # via matplotlib
 python-dateutil==2.9.0.post0
     # via
@@ -94,7 +94,7 @@ six==1.17.0
     # via python-dateutil
 smmap==5.0.2
     # via gitdb
-streamlit==1.52.2
+streamlit==1.53.1
     # via -r requirements.in
 tenacity==9.1.2
     # via streamlit
@@ -105,7 +105,6 @@ tornado==6.5.4
 typing-extensions==4.15.0
     # via
     #   altair
-    #   referencing
     #   streamlit
 tzdata==2025.3
     # via pandas
